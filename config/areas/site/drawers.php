@@ -1,6 +1,7 @@
 <?php
 
 $fields = require __DIR__ . '/../fields/drawers.php';
+$files = require __DIR__ . '/../files/drawers.php';
 
 return [
 	// page field drawers
@@ -8,6 +9,13 @@ return [
 		'pattern' => '(pages/.*?)/fields/(:any)/(:all?)',
 		'load'    => $fields['model']['load'],
 		'submit'  => $fields['model']['submit']
+	],
+
+	// page file
+	'page.file' => [
+		'pattern' => '(pages/.*?)/files/(:any)',
+		'load'    => $files['file']['load'],
+		'submit'  => $files['file']['submit'],
 	],
 
 	// page file field drawers
@@ -22,6 +30,13 @@ return [
 		'pattern' => '(site)/fields/(:any)/(:all?)',
 		'load'    => $fields['model']['load'],
 		'submit'  => $fields['model']['submit'],
+	],
+
+	// site file
+	'site.file' => [
+		'pattern' => '(site)/files/(:any)',
+		'load'    => $files['file']['load'],
+		'submit'  => $files['file']['submit'],
 	],
 
 	// site file field drawers

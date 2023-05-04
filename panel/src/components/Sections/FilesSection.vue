@@ -33,6 +33,8 @@ export default {
 					}
 				});
 
+				file.link = "/drawers" + file.link;
+
 				// add data-attributes info for item
 				file.data = {
 					"data-id": file.id,
