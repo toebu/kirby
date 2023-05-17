@@ -4,6 +4,7 @@ use Kirby\Cms\App;
 use Kirby\Cms\LanguageRoutes;
 use Kirby\Cms\Media;
 use Kirby\Cms\PluginAssets;
+use Kirby\Http\Response;
 use Kirby\Panel\Panel;
 use Kirby\Panel\Plugins;
 use Kirby\Toolkit\Str;
@@ -29,6 +30,18 @@ return function (App $kirby) {
 	 * plugins.
 	 */
 	$before = [
+		[
+			'pattern' => '(:all)',
+			'method'  => 'OPTIONS',
+			'action'  => function () use ($kirby) {
+				return new Response('', null, 204, [
+					'Access-Control-Allow-Origin'  => $kirby->option('cors.allowOrigin', '*'),
+					'Access-Control-Allow-Methods' => $kirby->option('cors.allowMethods', 'GET, POST, OPTIONS'),
+					'Access-Control-Allow-Headers' => $kirby->option('cors.allowHeaders', '*'),
+					'Access-Control-Max-Age'       => $kirby->option('cors.maxAge', '86400'),
+				]);
+			},
+		],
 		[
 			'pattern' => $api . '/(:all)',
 			'method'  => 'ALL',

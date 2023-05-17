@@ -269,7 +269,9 @@ class Responder
 	public function headers(array $headers = null)
 	{
 		if ($headers === null) {
-			$injectedHeaders = [];
+			$injectedHeaders = [
+	            'Access-Control-Allow-Origin' => App::instance()->option('cors.allowOrigin', '/')
+			];
 
 			if (static::isPrivate($this->usesAuth(), $this->usesCookies()) === true) {
 				// never ever cache private responses
