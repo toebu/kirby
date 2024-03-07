@@ -29,6 +29,7 @@
 					<k-page-tree @click.native.stop @select="navigate($event.id)" />
 				</k-dropdown-content>
 			</k-button-group>
+
 			<k-toggles-input
 				v-if="sizes.length > 1"
 				:options="sizes"
@@ -36,6 +37,7 @@
 				class="k-preview-sizes"
 				@input="size = $event"
 			/>
+
 			<k-button-group>
 				<k-button
 					v-if="permissions.preview && model.previewUrl"
@@ -112,7 +114,7 @@ export default {
 	computed: {
 		sizes() {
 			const sizes = [];
-			const breakpoints = this.$panel.config.preview.breakpoints;
+			const breakpoints = this.$panel.config.preview.breakpoints ?? true;
 
 			if (breakpoints) {
 				if (breakpoints.sm !== false) {
