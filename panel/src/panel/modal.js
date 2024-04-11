@@ -1,9 +1,7 @@
 // @ts-check
 
-import { isObject } from "@/helpers/object.js";
 import Feature, { defaults as featureDefaults } from "./feature.js";
-import focus from "@/helpers/focus.js";
-import "@/helpers/array.js";
+import "@/kirby/helpers/array.js";
 import { set } from "vue";
 
 /**
@@ -72,7 +70,7 @@ export default (panel, key, defaults) => {
 		 * @param {String} input
 		 */
 		focus(input) {
-			focus(`.k-${this.key()}-portal`, input);
+			kirby.helpers.focus(`.k-${this.key()}-portal`, input);
 		},
 
 		/**
@@ -171,7 +169,7 @@ export default (panel, key, defaults) => {
 			const response = await this.post(value, options);
 
 			// the request failed and should have raised an error
-			if (isObject(response) === false) {
+			if (kirby.helpers.object.isObject(response) === false) {
 				return response;
 			}
 

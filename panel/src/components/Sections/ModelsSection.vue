@@ -47,8 +47,6 @@
 </template>
 
 <script>
-import debounce from "@/helpers/debounce";
-
 export default {
 	inheritAttrs: false,
 	props: {
@@ -185,7 +183,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.search = debounce(this.search, 200);
+		this.search = kirby.helpers.debounce(this.search, 200);
 		this.load();
 	},
 	methods: {

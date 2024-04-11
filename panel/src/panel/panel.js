@@ -11,14 +11,11 @@ import Plugins from "./plugins.js";
 import Menu from "./menu.js";
 import System from "./system.js";
 import Translation from "./translation.js";
-import { buildUrl, isUrl } from "@/helpers/url.js";
 import { reactive } from "vue";
 import { redirect, request } from "./request.js";
 import Upload from "./upload.js";
 import User from "./user.js";
 import View from "./view.js";
-import { isObject } from "@/helpers/object.js";
-import { isEmpty } from "@/helpers/string.js";
 
 /**
  * Globals are just reactive objects
@@ -214,7 +211,7 @@ export default {
 	 */
 	async open(url, options = {}) {
 		try {
-			if (isUrl(url) === false) {
+			if (kirby.helpers.url.isUrl(url) === false) {
 				this.set(url);
 			} else {
 				this.isLoading = true;
@@ -351,7 +348,10 @@ export default {
 		for (const key of states) {
 			// if there's a new state for the
 			// state object, call its state setter method
-			if (isObject(state[key]) || Array.isArray(state[key])) {
+			if (
+				kirby.helpers.object.isObject(state[key]) ||
+				Array.isArray(state[key])
+			) {
 				this[key].set(state[key]);
 			}
 		}
@@ -362,7 +362,7 @@ export default {
 		for (const modal of modals) {
 			// if there's a new state for the
 			// modal, call its state setter method
-			if (isObject(state[modal]) === true) {
+			if (kirby.helpers.object.isObject(state[modal]) === true) {
 				if (state[modal].redirect) {
 					return this.open(state[modal].redirect);
 				} else {
@@ -381,7 +381,7 @@ export default {
 		/**
 		 * Toggle the dropdown
 		 */
-		if (isObject(state.dropdown) === true) {
+		if (kirby.helpers.object.isObject(state.dropdown) === true) {
 			this.dropdown.open(state.dropdown);
 		} else if (state.dropdown !== undefined) {
 			this.dropdown.close();
@@ -390,7 +390,7 @@ export default {
 		/**
 		 * Open the view
 		 */
-		if (isObject(state.view) === true) {
+		if (kirby.helpers.object.isObject(state.view) === true) {
 			this.view.open(state.view);
 		}
 	},
@@ -440,7 +440,7 @@ export default {
 	 * @param {String} title
 	 */
 	set title(title) {
-		if (isEmpty(this.system.title) === false) {
+		if (kirby.helpers.string.isEmpty(this.system.title) === false) {
 			title += " | " + this.system.title;
 		}
 
@@ -457,6 +457,6 @@ export default {
 	 * @returns {URL}
 	 */
 	url(url = "", query = {}, origin) {
-		return buildUrl(url, query, origin);
+		return kirby.helpers.url.buildUrl(url, query, origin);
 	}
 };

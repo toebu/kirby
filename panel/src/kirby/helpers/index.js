@@ -4,7 +4,6 @@ import color from "./color.js";
 import debounce from "./debounce.js";
 import embed from "./embed.js";
 import field from "./field.js";
-import file from "./file.js";
 import focus from "./focus.js";
 import isComponent from "./isComponent.js";
 import isUploadEvent from "./isUploadEvent.js";
@@ -12,6 +11,7 @@ import keyboard from "./keyboard.js";
 import link from "./link.js";
 import object from "./object.js";
 import page from "./page.js";
+import queue from "./queue.js";
 import ratio from "./ratio.js";
 import sort from "./sort.js";
 import string from "./string.js";
@@ -21,33 +21,23 @@ import url from "./url.js";
 import "./regex.js";
 
 export default {
-	install(app) {
-		app.prototype.$helper = {
-			array,
-			clipboard,
-			clone: object.clone,
-			color,
-			embed,
-			focus,
-			isComponent,
-			isUploadEvent,
-			debounce,
-			field,
-			file,
-			keyboard,
-			link,
-			object,
-			page,
-			pad: string.pad,
-			ratio,
-			slug: string.slug,
-			sort,
-			string,
-			upload,
-			url,
-			uuid: string.uuid
-		};
-
-		app.prototype.$esc = string.escapeHTML;
-	}
+	array,
+	clipboard,
+	color,
+	debounce,
+	embed,
+	field,
+	focus,
+	isComponent,
+	isUploadEvent,
+	keyboard,
+	link,
+	object,
+	page,
+	queue,
+	ratio,
+	sort,
+	string,
+	upload,
+	url
 };

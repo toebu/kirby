@@ -1,5 +1,3 @@
-import debounce from "@/helpers/debounce.js";
-
 /**
  * The Search mixin is intended for all components
  * that feature a query input that should trigger
@@ -29,7 +27,7 @@ export default {
 		}
 	},
 	created() {
-		this.search = debounce(this.search, this.delay);
+		this.search = this.$helpers.debounce(this.search, this.delay);
 	},
 	methods: {
 		async search() {

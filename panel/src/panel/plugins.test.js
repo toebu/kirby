@@ -5,7 +5,7 @@
 import { describe, expect, it } from "vitest";
 import Plugins from "./plugins.js";
 import Vue from "vue";
-import isComponent from "@/helpers/isComponent.js";
+import isComponent from "@/kirby/helpers/isComponent.js";
 
 describe.concurrent("panel.plugins", () => {
 	window.Vue = Vue;

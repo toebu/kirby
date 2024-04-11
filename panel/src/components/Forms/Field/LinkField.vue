@@ -156,7 +156,7 @@ export default {
 		},
 		/**
 		 * Returns the full type as defined in
-		 * the helpers/link.js types object. Falls back
+		 * the kirby/helpers/link.js types object. Falls back
 		 * to the first available type.
 		 */
 		currentType() {

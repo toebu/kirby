@@ -3,8 +3,9 @@ import Vue, { h } from "vue";
 import App from "./panel/app.js";
 import Components from "./components/index.js";
 import ErrorHandling from "./config/errorhandling";
-import Helpers from "./helpers/index.js";
+import Helpers from "./config/helpers.js";
 import I18n from "./config/i18n.js";
+import Kirby from "./kirby/index.js";
 import Legacy from "./panel/legacy.js";
 import Libraries from "./libraries/index.js";
 import Panel from "./panel/panel.js";
@@ -20,6 +21,11 @@ Vue.config.devtools = true;
  */
 import "./styles/config.css";
 import "./styles/reset.css";
+
+/**
+ * Initialize Kirby library of global helpers, props etc.
+ */
+Kirby.create();
 
 /**
  * Load all relevant Vue plugins

@@ -1,9 +1,5 @@
-import { uuid } from "@/helpers/string";
 import State from "./state.js";
 import listeners from "./listeners.js";
-import queue from "@/helpers/queue.js";
-import upload from "@/helpers/upload.js";
-import { extension, name, niceSize } from "@/helpers/file.js";
 
 export const defaults = () => {
 	return {
@@ -107,12 +103,12 @@ export default (panel) => {
 			return {
 				completed: false,
 				error: null,
-				extension: extension(file.name),
+				extension: kirby.helpers.file.extension(file.name),
 				filename: file.name,
-				id: uuid(),
+				id: kirby.helpers.string.uuid(),
 				model: null,
-				name: name(file.name),
-				niceSize: niceSize(file.size),
+				name: kirby.helpers.file.name(file.name),
+				niceSize: kirby.helpers.file.niceSize(file.size),
 				progress: 0,
 				size: file.size,
 				src: file,
@@ -297,7 +293,7 @@ export default (panel) => {
 				}
 			}
 
-			await queue(files);
+			await kirby.helper.queue(files);
 
 			// if no uncompleted files are left, be done
 			if (this.files.length === this.completed.length) {
@@ -306,7 +302,7 @@ export default (panel) => {
 		},
 		async upload(file) {
 			try {
-				const response = await upload(file.src, {
+				const response = await kirby.helpers.upload(file.src, {
 					attributes: this.attributes,
 					headers: { "x-csrf": panel.system.csrf },
 					filename: file.name + "." + file.extension,

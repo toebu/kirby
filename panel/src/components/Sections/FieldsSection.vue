@@ -24,7 +24,6 @@
 
 <script>
 import SectionMixin from "@/mixins/section.js";
-import debounce from "@/helpers/debounce.js";
 
 export default {
 	mixins: [SectionMixin],
@@ -49,7 +48,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.onInput = debounce(this.onInput, 50);
+		this.onInput = kirby.helpers.debounce(this.onInput, 50);
 		this.fetch();
 	},
 	methods: {

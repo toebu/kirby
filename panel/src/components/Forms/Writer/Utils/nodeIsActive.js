@@ -1,5 +1,3 @@
-import { length } from "@/helpers/object";
-
 import findParentNode from "./findParentNode";
 import findSelectedNodeOfType from "./findSelectedNodeOfType";
 
@@ -9,7 +7,7 @@ export default (state, type, attrs = {}) => {
 		findSelectedNodeOfType(type)(state.selection) ||
 		findParentNode(predicate)(state.selection);
 
-	if (length(attrs) === 0 || !node) {
+	if (kirby.helpers.object.length(attrs) === 0 || !node) {
 		return !!node;
 	}
 

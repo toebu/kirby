@@ -12,7 +12,6 @@ import System from "./system.js";
 import Site from "./site.js";
 import Translations from "./translations.js";
 import Users from "./users.js";
-import { rtrim } from "@/helpers/string";
 
 /**
  * Panel API Setup
@@ -22,7 +21,7 @@ import { rtrim } from "@/helpers/string";
 export default (panel) => {
 	const api = {
 		csrf: panel.system.csrf,
-		endpoint: rtrim(panel.urls.api, "/"),
+		endpoint: kirby.helpers.string.rtrim(panel.urls.api, "/"),
 		methodOverwrite: true,
 		ping: null,
 		requests: [],

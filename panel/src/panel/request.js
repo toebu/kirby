@@ -1,5 +1,3 @@
-import { buildUrl, isSameOrigin, makeAbsolute } from "@/helpers/url.js";
-import { toLowerKeys } from "../helpers/object.js";
 import AuthError from "@/errors/AuthError.js";
 import JsonRequestError from "@/errors/JsonRequestError.js";
 import RequestError from "@/errors/RequestError.js";
@@ -61,7 +59,7 @@ export const headers = (headers = {}, options = {}) => {
 		"x-fiber": true,
 		"x-fiber-globals": globals(options.globals),
 		"x-fiber-referrer": options.referrer ?? false,
-		...toLowerKeys(headers)
+		...kirby.helpers.object.toLowerKeys(headers)
 	};
 };
 
@@ -71,7 +69,7 @@ export const headers = (headers = {}, options = {}) => {
  * @returns false
  */
 export const redirect = (url) => {
-	window.location.href = makeAbsolute(url);
+	window.location.href = kirby.helpers.url.makeAbsolute(url);
 	return false;
 };
 
@@ -100,7 +98,7 @@ export const request = async (url, options = {}) => {
 	// those need a bit more work
 	options.body = body(options.body);
 	options.headers = headers(options.headers, options);
-	options.url = buildUrl(url, options.query);
+	options.url = kirby.helpers.url.buildUrl(url, options.query);
 
 	// The request object is a nice way to access all the
 	// important parts later in errors for example
@@ -108,7 +106,7 @@ export const request = async (url, options = {}) => {
 
 	// Don't even try to request a
 	// cross-origin url. Redirect instead.
-	if (isSameOrigin(request.url) === false) {
+	if (kirby.helpers.url.isSameOrigin(request.url) === false) {
 		// will be false for redirects
 		return redirect(request.url);
 	}

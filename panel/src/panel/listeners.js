@@ -1,5 +1,3 @@
-import { isObject } from "@/helpers/object";
-
 /**
  * @since 4.0.0
  */
@@ -20,7 +18,7 @@ export default () => {
 		 */
 		addEventListeners(listeners) {
 			// ignore invalid listeners
-			if (isObject(listeners) === false) {
+			if (kirby.helpers.object.isObject(listeners) === false) {
 				return;
 			}
 

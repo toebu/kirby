@@ -1,5 +1,4 @@
 import { set, del } from "vue";
-import { length } from "@/helpers/object.js";
 
 const keep = (id, data) => {
 	localStorage.setItem("kirby$content$" + id, JSON.stringify(data));
@@ -42,7 +41,7 @@ export default {
 		 */
 		hasChanges: (state, getters) => (id) => {
 			const changes = getters.model(id).changes;
-			return length(changes) > 0;
+			return kirby.helpers.object.length(changes) > 0;
 		},
 		/**
 		 * Checks for an ID if it is the current model

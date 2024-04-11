@@ -1,6 +1,4 @@
 import { responder } from "@/panel/request.js";
-import { toLowerKeys } from "@/helpers/object.js";
-import { ltrim, rtrim } from "@/helpers/string";
 
 export default (api) => {
 	return async (path, options = {}) => {
@@ -13,7 +11,7 @@ export default (api) => {
 				"content-type": "application/json",
 				"x-csrf": api.csrf,
 				"x-language": api.language,
-				...toLowerKeys(options.headers ?? {})
+				...kirby.helpers.object.toLowerKeys(options.headers ?? {})
 			},
 			...options
 		};
@@ -29,13 +27,16 @@ export default (api) => {
 		}
 
 		// build the request URL
-		options.url = rtrim(api.endpoint, "/") + "/" + ltrim(path, "/");
+		options.url =
+			kirby.helpers.string.rtrim(api.endpoint, "/") +
+			"/" +
+			kirby.helpers.string.ltrim(path, "/");
 
 		// The request object is a nice way to access all the
 		// important parts later in errors for example
 		const request = new Request(options.url, options);
 
-		// fetch the resquest's response
+		// fetch the request's response
 		const { response } = await responder(request, await fetch(request));
 
 		let data = response.json;
