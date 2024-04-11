@@ -86,7 +86,7 @@ export default {
 			this.$refs.overlay.close();
 		},
 		focus() {
-			this.$helper.focus(this.$refs.overlay);
+			this.$helpers.focus(this.$refs.overlay);
 		},
 		onCancel(event) {
 			// don't close the overlay when the

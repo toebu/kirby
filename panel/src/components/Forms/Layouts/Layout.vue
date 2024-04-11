@@ -97,7 +97,7 @@ export default {
 					click: () => this.openSettings(),
 					icon: "settings",
 					text: this.$t("settings"),
-					when: this.$helper.object.isEmpty(this.settings) === false
+					when: this.$helpers.object.isEmpty(this.settings) === false
 				},
 				{
 					click: () => this.$emit("duplicate"),

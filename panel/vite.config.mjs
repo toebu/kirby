@@ -5,6 +5,7 @@ import { defineConfig, splitVendorChunkPlugin } from "vite";
 import vue from "@vitejs/plugin-vue2";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import externalGlobals from "rollup-plugin-external-globals";
+import externalize from "vite-plugin-externalize-dependencies";
 import kirby from "./scripts/vite-kirby.mjs";
 
 let customServer;
@@ -16,7 +17,12 @@ try {
 
 export default defineConfig(({ command }) => {
 	// gather plugins depending on environment
-	const plugins = [vue(), splitVendorChunkPlugin(), kirby()];
+	const plugins = [
+		vue(),
+		splitVendorChunkPlugin(),
+		kirby(),
+		externalize({ externals: ["kirby"] })
+	];
 
 	if (command === "build") {
 		plugins.push(
@@ -59,7 +65,10 @@ export default defineConfig(({ command }) => {
 			minify: "terser",
 			cssCodeSplit: false,
 			rollupOptions: {
-				input: "./src/index.js",
+				input: {
+					kirby: "./src/kirby/index.js",
+					index: "./src/index.js"
+				},
 				output: {
 					entryFileNames: "js/[name].min.js",
 					chunkFileNames: "js/[name].min.js",

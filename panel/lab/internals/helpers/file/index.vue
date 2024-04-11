@@ -3,7 +3,7 @@
 		<k-box theme="text">
 			<k-text>
 				Access the following file helpers in your Vue components through
-				<code>this.$helper.file</code>
+				<code>this.$helpers.file</code>
 			</k-text>
 		</k-box>
 
@@ -11,7 +11,7 @@
 			<k-text>
 				<p>Extracts the extension:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.file.extension(filename): string</k-code>
+				<k-code language="javascript">this.$helpers.file.extension(filename): string</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -32,7 +32,7 @@
 			<k-text>
 				<p>Extracts the name without extension:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.file.name(filename): string</k-code>
+				<k-code language="javascript">this.$helpers.file.name(filename): string</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -53,7 +53,7 @@
 			<k-text>
 				<p>Creates a nice human-readable file size string with size unit:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.file.niceSize(size): string</k-code>
+				<k-code language="javascript">this.$helpers.file.niceSize(size): string</k-code>
 			</k-text>
 
 			<!-- @code -->

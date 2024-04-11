@@ -98,7 +98,7 @@ export default {
 	},
 	watch: {
 		fetchParams(newParams, oldParams) {
-			if (this.$helper.object.same(newParams, oldParams) === false) {
+			if (this.$helpers.object.same(newParams, oldParams) === false) {
 				this.pagination.page = 1;
 				this.fetch();
 			}
@@ -152,7 +152,7 @@ export default {
 				return del(this.selected, item.id);
 			}
 
-			if (this.max && this.max <= this.$helper.object.length(this.selected)) {
+			if (this.max && this.max <= this.$helpers.object.length(this.selected)) {
 				return;
 			}
 

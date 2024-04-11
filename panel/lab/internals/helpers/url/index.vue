@@ -3,14 +3,14 @@
 		<k-box theme="text">
 			<k-text>
 				Access the following url helpers in your Vue components through
-				<code>this.$helper.url</code>
+				<code>this.$helpers.url</code>
 			</k-text>
 		</k-box>
 
 		<k-lab-example label="$helper.url.base()">
 			<k-text>
 				<p>Returns the base URL from the &lt;base> element:</p>
-				<k-code language="javascript">this.$helper.url.base(): string</k-code>
+				<k-code language="javascript">this.$helpers.url.base(): string</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -26,7 +26,7 @@
 					given, to the query of the origin:
 				</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.url.buildQuery(query, origin): string</k-code>
+				<k-code language="javascript">this.$helpers.url.buildQuery(query, origin): string</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -52,7 +52,7 @@
 					and query data:
 				</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.url.buildUrl(url, query, origin): string</k-code>
+				<k-code language="javascript">this.$helpers.url.buildUrl(url, query, origin): string</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -75,7 +75,7 @@
 			<k-text>
 				<p>Checks if the url string is absolute:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.url.isAbsolute(url): boolean</k-code>
+				<k-code language="javascript">this.$helpers.url.isAbsolute(url): boolean</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -96,7 +96,7 @@
 			<k-text>
 				<p>Checks if the url is on the same origin:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.url.isSameOrigin(url): boolean</k-code>
+				<k-code language="javascript">this.$helpers.url.isSameOrigin(url): boolean</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -117,7 +117,7 @@
 			<k-text>
 				<p>Checks if the given argument is a URL:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.url.isUrl(url): boolean</k-code>
+				<k-code language="javascript">this.$helpers.url.isUrl(url): boolean</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -138,7 +138,7 @@
 			<k-text>
 				<p>Make sure the URL is absolute:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.url.makeAbsolute(path): string</k-code>
+				<k-code language="javascript">this.$helpers.url.makeAbsolute(path): string</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -159,7 +159,7 @@
 			<k-text>
 				<p>Converts any given url to a URL object:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.url.toObject(url, origin): URL</k-code>
+				<k-code language="javascript">this.$helpers.url.toObject(url, origin): URL</k-code>
 			</k-text>
 		</k-lab-example>
 	</k-lab-examples>

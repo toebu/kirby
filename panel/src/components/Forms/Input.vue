@@ -39,14 +39,13 @@
 </template>
 
 <script>
-import { after, before, invalid } from "@/mixins/props.js";
+import { after, before, disabled, invalid } from "@/mixins/props.js";
 
 export const props = {
-	mixins: [after, before, invalid],
+	mixins: [after, before, disabled, invalid],
 	inheritAttrs: false,
 	props: {
 		autofocus: Boolean,
-		disabled: kirby.props.disabled,
 		type: String,
 		icon: [String, Boolean],
 		novalidate: {

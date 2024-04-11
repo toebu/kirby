@@ -113,7 +113,7 @@ export default {
 		 * @param {string} type field type
 		 */
 		hasFieldType(type) {
-			return this.$helper.isComponent(`k-${type}-field`);
+			return this.$helpers.isComponent(`k-${type}-field`);
 		},
 		/**
 		 * Check if a field with the given name exists in the fieldset
@@ -133,7 +133,7 @@ export default {
 			this.$emit("input", values, field, name);
 		},
 		hasErrors() {
-			return this.$helper.object.length(this.errors) > 0;
+			return this.$helpers.object.length(this.errors) > 0;
 		}
 	}
 };

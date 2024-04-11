@@ -3,7 +3,7 @@
 		<k-box theme="text">
 			<k-text>
 				Access the following keyboard helpers in your Vue components through
-				<code>this.$helper.keyboard</code>
+				<code>this.$helpers.keyboard</code>
 			</k-text>
 		</k-box>
 
@@ -12,7 +12,7 @@
 				<p>Returns name of meta key for current OS:</p>
 
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.keyboard.metaKey(): string</k-code>
+				<k-code language="javascript">this.$helpers.keyboard.metaKey(): string</k-code>
 			</k-text>
 
 			<h2>Result</h2>

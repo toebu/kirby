@@ -1,5 +1,6 @@
-import Modal, { defaults as modalDefaults } from "./modal.js";
+import { helpers } from "kirby";
 import History from "./history.js";
+import Modal, { defaults as modalDefaults } from "./modal.js";
 import { set } from "vue";
 
 export const defaults = () => {
@@ -164,7 +165,7 @@ export default (panel) => {
 			parent.set.call(this, state);
 
 			// create a unique ID for the drawer if it does not have one
-			this.id = this.id ?? kirby.helpers.string.uuid();
+			this.id = this.id ?? helpers.string.uuid();
 
 			return this.state();
 		},

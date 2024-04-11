@@ -215,6 +215,10 @@ class Assets
 	{
 		$js = A::merge(
 			[
+				'kirby'       => [
+					'nonce' => $this->nonce,
+					'src'   => $this->url . '/js/kirby.min.js',
+				],
 				'vue' => [
 					'nonce' => $this->nonce,
 					'src'   => $this->url . '/js/vue.min.js'
@@ -244,7 +248,6 @@ class Assets
 				'index' => [
 					'nonce' => $this->nonce,
 					'src'   => $this->url . '/js/index.min.js',
-					'type'  => 'module'
 				],
 			]
 		);
@@ -254,6 +257,11 @@ class Assets
 		// path to `index.js` - vendor does not need
 		// to be loaded in dev mode
 		if ($this->dev === true) {
+			$js['kirby'] = [
+				'nonce' => $this->nonce,
+				'src'   => $this->url . '/src/kirby/index.js',
+			];
+
 			$js['vite'] = [
 				'nonce' => $this->nonce,
 				'src'   => $this->url . '/@vite/client',
@@ -263,7 +271,6 @@ class Assets
 			$js['index'] = [
 				'nonce' => $this->nonce,
 				'src'   => $this->url . '/src/index.js',
-				'type'  => 'module'
 			];
 
 			// load the development version of Vue

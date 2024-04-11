@@ -3,7 +3,7 @@
 		<k-box theme="text">
 			<k-text>
 				Access the following object helpers in your Vue components through
-				<code>this.$helper.object</code>
+				<code>this.$helpers.object</code>
 			</k-text>
 		</k-box>
 
@@ -11,7 +11,7 @@
 			<k-text>
 				<p>Checks if value is empty:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.object.isEmpty(value): boolean</k-code>
+				<k-code language="javascript">this.$helpers.object.isEmpty(value): boolean</k-code>
 			</k-text>
 
 			<k-grid variant="fields">
@@ -80,7 +80,7 @@
 			<k-text>
 				<p>Checks if input is an object:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.object.isObject(value): boolean</k-code>
+				<k-code language="javascript">this.$helpers.object.isObject(value): boolean</k-code>
 			</k-text>
 
 			<k-grid variant="fields">
@@ -125,7 +125,7 @@
 			<k-text>
 				<p>Counts all keys in the object:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.object.length(object): int</k-code>
+				<k-code language="javascript">this.$helpers.object.length(object): int</k-code>
 			</k-text>
 
 			<k-grid variant="fields">
@@ -152,7 +152,7 @@
 			<k-text>
 				<p>Merges two objects:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.object.merge(target, source): object</k-code>
+				<k-code language="javascript">this.$helpers.object.merge(target, source): object</k-code>
 			</k-text>
 
 			<k-grid variant="fields">
@@ -173,7 +173,7 @@
 			<k-text>
 				<p>Check if the objects are identical:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.object.same(a, b): boolean</k-code>
+				<k-code language="javascript">this.$helpers.object.same(a, b): boolean</k-code>
 			</k-text>
 
 			<k-grid variant="fields">
@@ -202,7 +202,7 @@
 			<k-text>
 				<p>Converts to lowercase all keys in an object:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.object.toLowerKeys(object): object</k-code>
+				<k-code language="javascript">this.$helpers.object.toLowerKeys(object): object</k-code>
 			</k-text>
 
 			<k-grid variant="fields">

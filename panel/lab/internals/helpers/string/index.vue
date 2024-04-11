@@ -3,7 +3,7 @@
 		<k-box theme="text">
 			<k-text>
 				Access the following string helpers in your Vue components through
-				<code>this.$helper.string</code>
+				<code>this.$helpers.string</code>
 			</k-text>
 		</k-box>
 
@@ -11,7 +11,7 @@
 			<k-text>
 				<p>Converts camel-case to kebab-case:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.camelToKebab(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.camelToKebab(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -33,7 +33,7 @@
 			<k-text>
 				<p>Escapes HTML in string:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.escapeHTML(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.escapeHTML(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -53,7 +53,7 @@
 			<k-text>
 				<p>Checks if string contains an emoji:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.hasEmoji(string): boolean</k-code>
+				<k-code language="javascript">this.$helpers.string.hasEmoji(string): boolean</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -75,7 +75,7 @@
 			<k-text>
 				<p>Checks if a string is empty:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.isEmpty(string): boolean</k-code>
+				<k-code language="javascript">this.$helpers.string.isEmpty(string): boolean</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -97,7 +97,7 @@
 			<k-text>
 				<p>Turns first letter lowercase:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.lcfirst(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.lcfirst(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -117,7 +117,7 @@
 			<k-text>
 				<p>Trims the given character(s) at the beginning of the string:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.ltrim(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.ltrim(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -139,7 +139,7 @@
 			<k-text>
 				<p>Prefixes string with 0 until length is reached:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.pad(string, length): string</k-code>
+				<k-code language="javascript">this.$helpers.string.pad(string, length): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -165,7 +165,7 @@
 			<k-text>
 				<p>Generate random alpha-num string of specified length:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.random(length): string</k-code>
+				<k-code language="javascript">this.$helpers.string.random(length): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -189,7 +189,7 @@
 			<k-text>
 				<p>Trims the given character(s) at the end of the string:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.rtrim(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.rtrim(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -212,7 +212,7 @@
 				<p>Convert string to ASCII slug:</p>
 
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.slug(string, rules, allowed, separator): string</k-code>
+				<k-code language="javascript">this.$helpers.string.slug(string, rules, allowed, separator): string</k-code>
 
 				<ul>
 					<li>
@@ -250,7 +250,7 @@
 			<k-text>
 				<p>Removes HTML from a string:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.stripHTML(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.stripHTML(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -270,7 +270,7 @@
 			<k-text>
 				<p>Turns first letter uppercase:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.ucfirst(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.ucfirst(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -290,7 +290,7 @@
 			<k-text>
 				<p>Replaces template placeholders in string with provided values:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.template(string, values): string</k-code>
+				<k-code language="javascript">this.$helpers.string.template(string, values): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -314,7 +314,7 @@
 			<k-text>
 				<p>Turns first letter of each word uppercase:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.ucwords(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.ucwords(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -334,7 +334,7 @@
 			<k-text>
 				<p>Turns escaped HTML entities into actual characters again:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.unescapeHTML(string): string</k-code>
+				<k-code language="javascript">this.$helpers.string.unescapeHTML(string): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<k-grid variant="fields">
@@ -356,7 +356,7 @@
 			<k-text>
 				<p>Returns a unique ID:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.string.uuid(): string</k-code>
+				<k-code language="javascript">this.$helpers.string.uuid(): string</k-code>
 			</k-text>
 			<!-- @code -->
 			<h2>Result</h2>
@@ -442,7 +442,7 @@ export const pad = {
 export const random = {
 	data() {
 		return {
-			random: this.$helper.string.random(20)
+			random: this.$helpers.string.random(20)
 		};
 	}
 };

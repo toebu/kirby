@@ -1,3 +1,4 @@
+import { helpers } from "kirby";
 import { responder } from "@/panel/request.js";
 
 export default (api) => {
@@ -11,7 +12,7 @@ export default (api) => {
 				"content-type": "application/json",
 				"x-csrf": api.csrf,
 				"x-language": api.language,
-				...kirby.helpers.object.toLowerKeys(options.headers ?? {})
+				...helpers.object.toLowerKeys(options.headers ?? {})
 			},
 			...options
 		};
@@ -28,9 +29,9 @@ export default (api) => {
 
 		// build the request URL
 		options.url =
-			kirby.helpers.string.rtrim(api.endpoint, "/") +
+			helpers.string.rtrim(api.endpoint, "/") +
 			"/" +
-			kirby.helpers.string.ltrim(path, "/");
+			helpers.string.ltrim(path, "/");
 
 		// The request object is a nice way to access all the
 		// important parts later in errors for example

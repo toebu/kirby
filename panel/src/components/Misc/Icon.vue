@@ -44,7 +44,7 @@ export default {
 	mixins: [props],
 	computed: {
 		isEmoji() {
-			return this.$helper.string.hasEmoji(this.type);
+			return this.$helpers.string.hasEmoji(this.type);
 		}
 	}
 };

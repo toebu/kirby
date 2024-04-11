@@ -1,3 +1,4 @@
+import { helpers } from "kirby";
 import mitt from "mitt";
 
 /**
@@ -211,7 +212,7 @@ export default (panel) => {
 				parts.push("shift");
 			}
 
-			let key = event.key ? kirby.helpers.string.lcfirst(event.key) : null;
+			let key = event.key ? helpers.string.lcfirst(event.key) : null;
 
 			// key replacements
 			const keys = {

@@ -24,7 +24,7 @@ export default {
 		component() {
 			const component = "k-" + this.textField.type + "-input";
 
-			if (this.$helper.isComponent(component)) {
+			if (this.$helpers.isComponent(component)) {
 				return component;
 			}
 

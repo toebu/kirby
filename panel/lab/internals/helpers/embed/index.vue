@@ -3,7 +3,7 @@
 		<k-box theme="text">
 			<k-text>
 				Access the following embed helpers in your Vue components through
-				<code>this.$helper.embed</code>
+				<code>this.$helpers.embed</code>
 			</k-text>
 		</k-box>
 
@@ -11,7 +11,7 @@
 			<k-text>
 				<p>Builds a YouTube embed URL:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.embed.youtube(url, doNotTrack): string|false</k-code>
+				<k-code language="javascript">this.$helpers.embed.youtube(url, doNotTrack): string|false</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -38,7 +38,7 @@
 			<k-text>
 				<p>Builds a Vimeo embed URL:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.embed.vimeo(url, doNotTrack): string|false</k-code>
+				<k-code language="javascript">this.$helpers.embed.vimeo(url, doNotTrack): string|false</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -65,7 +65,7 @@
 			<k-text>
 				<p>Builds an embed URL for the given video URL:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.embed.video(url, doNotTrack): string|false</k-code>
+				<k-code language="javascript">this.$helpers.embed.video(url, doNotTrack): string|false</k-code>
 			</k-text>
 
 			<!-- @code -->

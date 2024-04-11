@@ -109,7 +109,7 @@ export default {
 			}
 		},
 		setFocus(focus) {
-			if (this.$helper.object.isObject(focus) === true) {
+			if (this.$helpers.object.isObject(focus) === true) {
 				focus = `${focus.x}% ${focus.y}%`;
 			}
 

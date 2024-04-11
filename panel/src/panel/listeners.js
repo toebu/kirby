@@ -1,3 +1,5 @@
+import { helpers } from "kirby";
+
 /**
  * @since 4.0.0
  */
@@ -18,7 +20,7 @@ export default () => {
 		 */
 		addEventListeners(listeners) {
 			// ignore invalid listeners
-			if (kirby.helpers.object.isObject(listeners) === false) {
+			if (helpers.object.isObject(listeners) === false) {
 				return;
 			}
 

@@ -1,3 +1,4 @@
+import { helpers } from "kirby";
 import State from "./state.js";
 
 export const defaults = () => {
@@ -66,7 +67,7 @@ export default () => {
 				return string;
 			}
 
-			return kirby.helpers.string.template(string, data);
+			return helpers.string.template(string, data);
 		}
 	};
 };

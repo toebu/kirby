@@ -96,12 +96,12 @@ export function wrap(array) {
 }
 
 /**
- * @deprecated `Array.fromObject()` will be removed in a future version. Use `this.$helper.array.fromObject()` instead.
+ * @deprecated `Array.fromObject()` will be removed in a future version. Use `this.$helpers.array.fromObject()` instead.
  */
 Array.fromObject = fromObject;
 
 /**
- * @deprecated `myArray.sortBy()` will be removed in a future version. Use `this.$helper.array.sortBy(myArray, sortBy)` instead.
+ * @deprecated `myArray.sortBy()` will be removed in a future version. Use `this.$helpers.array.sortBy(myArray, sortBy)` instead.
  */
 Object.defineProperty(Array.prototype, "sortBy", {
 	value: function (sortBy) {
@@ -113,7 +113,7 @@ Object.defineProperty(Array.prototype, "sortBy", {
 });
 
 /**
- * @deprecated `myArray.split()` will be removed in a future version. Use `this.$helper.array.split(myArray, delimiter)` instead.
+ * @deprecated `myArray.split()` will be removed in a future version. Use `this.$helpers.array.split(myArray, delimiter)` instead.
  */
 Object.defineProperty(Array.prototype, "split", {
 	value: function (delimiter) {
@@ -125,7 +125,7 @@ Object.defineProperty(Array.prototype, "split", {
 });
 
 /**
- * @deprecated `Array.wrap()` will be removed in a future version. Use `this.$helper.array.wrap()` instead.
+ * @deprecated `Array.wrap()` will be removed in a future version. Use `this.$helpers.array.wrap()` instead.
  */
 Array.wrap = wrap;
 

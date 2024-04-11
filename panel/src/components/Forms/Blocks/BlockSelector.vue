@@ -109,7 +109,7 @@ export default {
 			return groups;
 		},
 		shortcut() {
-			return this.$helper.keyboard.metaKey() + "+v";
+			return this.$helpers.keyboard.metaKey() + "+v";
 		}
 	},
 	mounted() {

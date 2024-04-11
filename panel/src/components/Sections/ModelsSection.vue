@@ -183,7 +183,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.search = kirby.helpers.debounce(this.search, 200);
+		this.search = this.$helpers.debounce(this.search, 200);
 		this.load();
 	},
 	methods: {

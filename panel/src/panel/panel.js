@@ -5,6 +5,7 @@ import Drag from "./drag.js";
 import Drawer from "./drawer.js";
 import Dropdown from "./dropdown.js";
 import Events from "./events.js";
+import { helpers } from "kirby";
 import Notification from "./notification.js";
 import Language from "./language.js";
 import Plugins from "./plugins.js";
@@ -16,7 +17,6 @@ import { redirect, request } from "./request.js";
 import Upload from "./upload.js";
 import User from "./user.js";
 import View from "./view.js";
-
 /**
  * Globals are just reactive objects
  * from the backend that don't have their
@@ -211,7 +211,7 @@ export default {
 	 */
 	async open(url, options = {}) {
 		try {
-			if (kirby.helpers.url.isUrl(url) === false) {
+			if (helpers.url.isUrl(url) === false) {
 				this.set(url);
 			} else {
 				this.isLoading = true;
@@ -348,10 +348,7 @@ export default {
 		for (const key of states) {
 			// if there's a new state for the
 			// state object, call its state setter method
-			if (
-				kirby.helpers.object.isObject(state[key]) ||
-				Array.isArray(state[key])
-			) {
+			if (helpers.object.isObject(state[key]) || Array.isArray(state[key])) {
 				this[key].set(state[key]);
 			}
 		}
@@ -362,7 +359,7 @@ export default {
 		for (const modal of modals) {
 			// if there's a new state for the
 			// modal, call its state setter method
-			if (kirby.helpers.object.isObject(state[modal]) === true) {
+			if (helpers.object.isObject(state[modal]) === true) {
 				if (state[modal].redirect) {
 					return this.open(state[modal].redirect);
 				} else {
@@ -381,7 +378,7 @@ export default {
 		/**
 		 * Toggle the dropdown
 		 */
-		if (kirby.helpers.object.isObject(state.dropdown) === true) {
+		if (helpers.object.isObject(state.dropdown) === true) {
 			this.dropdown.open(state.dropdown);
 		} else if (state.dropdown !== undefined) {
 			this.dropdown.close();
@@ -390,7 +387,7 @@ export default {
 		/**
 		 * Open the view
 		 */
-		if (kirby.helpers.object.isObject(state.view) === true) {
+		if (helpers.object.isObject(state.view) === true) {
 			this.view.open(state.view);
 		}
 	},
@@ -440,7 +437,7 @@ export default {
 	 * @param {String} title
 	 */
 	set title(title) {
-		if (kirby.helpers.string.isEmpty(this.system.title) === false) {
+		if (helpers.string.isEmpty(this.system.title) === false) {
 			title += " | " + this.system.title;
 		}
 
@@ -457,6 +454,6 @@ export default {
 	 * @returns {URL}
 	 */
 	url(url = "", query = {}, origin) {
-		return kirby.helpers.url.buildUrl(url, query, origin);
+		return helpers.url.buildUrl(url, query, origin);
 	}
 };

@@ -1,3 +1,5 @@
+import { helpers } from "kirby";
+
 /**
  * Represents a particular part of state
  * for the panel, i.e. system, translation.
@@ -92,7 +94,7 @@ export default (key, defaults = {}) => {
 		 * @returns {Boolean}
 		 */
 		validateState(state) {
-			if (kirby.helpers.object.isObject(state) === false) {
+			if (helpers.object.isObject(state) === false) {
 				throw new Error(`Invalid ${this.key()} state`);
 			}
 

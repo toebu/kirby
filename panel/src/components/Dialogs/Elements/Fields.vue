@@ -56,7 +56,7 @@ export default {
 	emits: ["input", "submit"],
 	computed: {
 		hasFields() {
-			return this.$helper.object.length(this.fields) > 0;
+			return this.$helpers.object.length(this.fields) > 0;
 		}
 	}
 };

@@ -144,13 +144,13 @@ export default {
 		 * Whether there are any marks to show in the toolbar
 		 */
 		hasMarks() {
-			return this.$helper.object.length(this.markButtons) > 0;
+			return this.$helpers.object.length(this.markButtons) > 0;
 		},
 		/**
 		 * Whether there are any nodes to show in the toolbar
 		 */
 		hasNodes() {
-			return this.$helper.object.length(this.nodeButtons) > 1;
+			return this.$helpers.object.length(this.nodeButtons) > 1;
 		},
 		/**
 		 * All marks that are available and requested based on the `marks` prop
@@ -158,7 +158,10 @@ export default {
 		markButtons() {
 			const available = this.editor.buttons("mark");
 
-			if (this.marks === false || this.$helper.object.length(available) === 0) {
+			if (
+				this.marks === false ||
+				this.$helpers.object.length(available) === 0
+			) {
 				return {};
 			}
 
@@ -184,7 +187,10 @@ export default {
 		nodeButtons() {
 			const available = this.editor.buttons("node");
 
-			if (this.nodes === false || this.$helper.object.length(available) === 0) {
+			if (
+				this.nodes === false ||
+				this.$helpers.object.length(available) === 0
+			) {
 				return {};
 			}
 

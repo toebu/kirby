@@ -214,7 +214,7 @@ export default {
 		},
 		onDrop($event) {
 			// dropping files
-			if (this.uploads && this.$helper.isUploadEvent($event)) {
+			if (this.uploads && this.$helpers.isUploadEvent($event)) {
 				return this.$panel.upload.open(
 					$event.dataTransfer.files,
 					this.uploadOptions
@@ -242,7 +242,7 @@ export default {
 		},
 		onOver($event) {
 			// drag & drop for files
-			if (this.uploads && this.$helper.isUploadEvent($event)) {
+			if (this.uploads && this.$helpers.isUploadEvent($event)) {
 				$event.dataTransfer.dropEffect = "copy";
 				this.focus();
 				this.over = true;

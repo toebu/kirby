@@ -33,7 +33,7 @@ export default {
 	emits: ["open"],
 	computed: {
 		hasTabs() {
-			return this.$helper.object.length(this.tabs) > 1;
+			return this.$helpers.object.length(this.tabs) > 1;
 		}
 	}
 };

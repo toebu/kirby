@@ -6,7 +6,7 @@
 
 				<!-- prettier-ignore -->
 				<k-code language="javascript">const original = (a, b) => {};
-const debounced = this.$helper.debounce(original, 500);</k-code>
+const debounced = this.$helpers.debounce(original, 500);</k-code>
 			</k-text>
 		</k-lab-example>
 	</k-lab-examples>

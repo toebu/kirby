@@ -2,14 +2,14 @@
 	<k-lab-examples class="k-lab-helpers-examples">
 		<k-text>
 			Access the following array helpers in your Vue components through
-			<code>this.$helper.array</code>
+			<code>this.$helpers.array</code>
 		</k-text>
 
 		<k-lab-example label="$helper.array.fromObject()" script="fromObject">
 			<k-text>
 				<p>Creates an array from an object:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.array.fromObject(object): array</k-code>
+				<k-code language="javascript">this.$helpers.array.fromObject(object): array</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -32,7 +32,7 @@
 			<k-text>
 				<p>Filters an array by a provided query:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.array.search(array, "{{ searchQuery }}", { min: 2,	field: "name" }): array</k-code>
+				<k-code language="javascript">this.$helpers.array.search(array, "{{ searchQuery }}", { min: 2,	field: "name" }): array</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -60,7 +60,7 @@
 			<k-text>
 				<p>Sorts an array by one or more fields and directions:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.array.sortBy(array, "name desc"): array</k-code>
+				<k-code language="javascript">this.$helpers.array.sortBy(array, "name desc"): array</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -83,7 +83,7 @@
 			<k-text>
 				<p>Splits an array into groups by a delimiter entry:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.array.split(array, "-"): array</k-code>
+				<k-code language="javascript">this.$helpers.array.split(array, "-"): array</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -106,7 +106,7 @@
 			<k-text>
 				<p>Wraps a value in an array (ensures the value will be an array):</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.array.wrap(value): array</k-code>
+				<k-code language="javascript">this.$helpers.array.wrap(value): array</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -162,7 +162,7 @@ export const search = {
 			];
 		},
 		searchResult() {
-			return this.$helper.array.search(this.searchInput, this.searchQuery, {
+			return this.$helpers.array.search(this.searchInput, this.searchQuery, {
 				min: 0,
 				field: "name"
 			});

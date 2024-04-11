@@ -51,7 +51,7 @@ export default {
 				return this.content.video?.[0]?.url;
 			}
 
-			return this.$helper.embed.video(this.content.url ?? "", true);
+			return this.$helpers.embed.video(this.content.url ?? "", true);
 		}
 	}
 };

@@ -86,7 +86,7 @@ export default {
 		},
 		statusBtn() {
 			return {
-				...this.$helper.page.status.call(
+				...this.$helpers.page.status.call(
 					this,
 					this.model.status,
 					!this.permissions.changeStatus || this.isLocked

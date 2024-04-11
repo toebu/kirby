@@ -219,7 +219,7 @@ export default {
 				// always escape HTML in text for tags that
 				// can't be matched with any defined option
 				// to avoid XSS when displaying via `v-html`
-				text: this.$helper.string.escapeHTML(tag.text ?? tag.value),
+				text: this.$helpers.string.escapeHTML(tag.text ?? tag.value),
 				value: tag.value
 			};
 		}

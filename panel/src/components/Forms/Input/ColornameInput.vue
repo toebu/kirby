@@ -103,7 +103,7 @@ export default {
 		},
 		onPaste(input) {
 			if (input instanceof ClipboardEvent) {
-				input = this.$helper.clipboard.read(input, true);
+				input = this.$helpers.clipboard.read(input, true);
 			}
 
 			this.convertAndEmit(input);

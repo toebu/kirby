@@ -1,13 +1,15 @@
+import { helpers } from "kirby";
+
 export default {
 	install(app) {
-		app.prototype.$helper = {
-			...kirby.helpers,
-			clone: kirby.helpers.object.clone,
-			pad: kirby.helpers.string.pad,
-			slug: kirby.helpers.string.slug,
-			uuid: kirby.helpers.string.uuid
+		app.prototype.$helpers = app.prototype.$helper = {
+			...helpers,
+			clone: helpers.object.clone,
+			pad: helpers.string.pad,
+			slug: helpers.string.slug,
+			uuid: helpers.string.uuid
 		};
 
-		app.prototype.$esc = kirby.helpers.string.escapeHTML;
+		app.prototype.$esc = helpers.string.escapeHTML;
 	}
 };

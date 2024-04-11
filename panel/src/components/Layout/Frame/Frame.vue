@@ -61,7 +61,7 @@ export default {
 	inheritAttrs: false,
 	computed: {
 		background() {
-			return this.$helper.color(this.back);
+			return this.$helpers.color(this.back);
 		}
 	}
 };

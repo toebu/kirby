@@ -5,7 +5,7 @@
 				<p>Checks if provided event is an upload-related event:</p>
 
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.isUploadEvent(event): boolean</k-code>
+				<k-code language="javascript">this.$helpers.isUploadEvent(event): boolean</k-code>
 			</k-text>
 		</k-lab-example>
 	</k-lab-examples>

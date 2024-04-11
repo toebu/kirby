@@ -1,3 +1,4 @@
+import { helpers } from "kirby";
 import { set, del } from "vue";
 
 const keep = (id, data) => {
@@ -41,7 +42,7 @@ export default {
 		 */
 		hasChanges: (state, getters) => (id) => {
 			const changes = getters.model(id).changes;
-			return kirby.helpers.object.length(changes) > 0;
+			return helpers.object.length(changes) > 0;
 		},
 		/**
 		 * Checks for an ID if it is the current model

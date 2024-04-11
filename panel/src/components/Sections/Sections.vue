@@ -68,7 +68,7 @@ export default {
 	},
 	methods: {
 		exists(type) {
-			return this.$helper.isComponent(`k-${type}-section`);
+			return this.$helpers.isComponent(`k-${type}-section`);
 		}
 	}
 };

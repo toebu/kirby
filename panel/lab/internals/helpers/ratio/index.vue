@@ -5,7 +5,7 @@
 				<p>Returns a percentage string for the provided fraction:</p>
 
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.ratio(fraction, fallback, vertical): string</k-code>
+				<k-code language="javascript">this.$helpers.ratio(fraction, fallback, vertical): string</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -36,7 +36,7 @@ export const fraction = {
 	},
 	computed: {
 		ratio() {
-			return this.$helper.ratio(this.fraction);
+			return this.$helpers.ratio(this.fraction);
 		}
 	}
 };

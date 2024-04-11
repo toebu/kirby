@@ -5,7 +5,7 @@
 				<p>Uploads a file using XMLHttpRequest:</p>
 
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.upload(file, params): Promise</k-code>
+				<k-code language="javascript">this.$helpers.upload(file, params): Promise</k-code>
 
 				<ul>
 					<li><code>file</code> (File): file to upload</li>

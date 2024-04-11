@@ -46,7 +46,7 @@ export default {
 			return this.type ?? this.detected.type;
 		},
 		detected() {
-			return this.$helper.link.detect(this.value);
+			return this.$helpers.link.detect(this.value);
 		},
 		isLink() {
 			return ["url", "email", "tel"].includes(this.currentType);
@@ -59,7 +59,7 @@ export default {
 					return;
 				}
 
-				this.model = await this.$helper.link.preview(this.detected);
+				this.model = await this.$helpers.link.preview(this.detected);
 			},
 			immediate: true
 		},

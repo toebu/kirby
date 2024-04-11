@@ -48,7 +48,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.onInput = kirby.helpers.debounce(this.onInput, 50);
+		this.onInput = this.$helpers.debounce(this.onInput, 50);
 		this.fetch();
 	},
 	methods: {

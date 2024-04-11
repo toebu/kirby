@@ -4,7 +4,7 @@
 			<k-text>
 				<p>Checks if the coponent is registered globally:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.isComponent(name): boolean</k-code>
+				<k-code language="javascript">this.$helpers.isComponent(name): boolean</k-code>
 			</k-text>
 
 			<!-- @code -->

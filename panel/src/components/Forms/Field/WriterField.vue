@@ -28,8 +28,8 @@ export default {
 	inheritAttrs: false,
 	computed: {
 		counterValue() {
-			const plain = this.$helper.string.stripHTML(this.value ?? "");
-			return this.$helper.string.unescapeHTML(plain);
+			const plain = this.$helpers.string.stripHTML(this.value ?? "");
+			return this.$helpers.string.unescapeHTML(plain);
 		}
 	},
 	methods: {

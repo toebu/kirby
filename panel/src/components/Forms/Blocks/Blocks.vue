@@ -127,7 +127,7 @@ export default {
 			};
 		},
 		hasFieldsets() {
-			return this.$helper.object.length(this.fieldsets) > 0;
+			return this.$helpers.object.length(this.fieldsets) > 0;
 		},
 		isEmpty() {
 			return this.blocks.length === 0;
@@ -192,7 +192,7 @@ export default {
 			this.focusOrOpen(block);
 		},
 		choose(index) {
-			if (this.$helper.object.length(this.fieldsets) === 1) {
+			if (this.$helpers.object.length(this.fieldsets) === 1) {
 				return this.add(Object.values(this.fieldsets)[0].type, index);
 			}
 
@@ -255,7 +255,7 @@ export default {
 				return false;
 			}
 
-			this.$helper.clipboard.write(blocks, e);
+			this.$helpers.clipboard.write(blocks, e);
 
 			// reselect the previously focussed elements
 			this.selected = blocks.map((block) => block.id);
@@ -337,7 +337,7 @@ export default {
 		async duplicate(block, index) {
 			const copy = {
 				...structuredClone(block),
-				id: this.$helper.uuid()
+				id: this.$helpers.uuid()
 			};
 			this.blocks.splice(index + 1, 0, copy);
 			this.save();
@@ -542,7 +542,7 @@ export default {
 			this.$refs["block-" + block.id]?.[0].open();
 		},
 		async paste(e, index) {
-			const html = this.$helper.clipboard.read(e);
+			const html = this.$helpers.clipboard.read(e);
 
 			// pass html or plain text to the paste endpoint to convert it to blocks
 			let blocks = await this.$api.post(this.endpoints.field + "/paste", {

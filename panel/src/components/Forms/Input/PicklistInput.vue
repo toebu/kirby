@@ -169,7 +169,7 @@ export default {
 				return;
 			}
 
-			return this.$helper.array.search(this.options, this.query, {
+			return this.$helpers.array.search(this.options, this.query, {
 				field: "text"
 			});
 		},
@@ -267,7 +267,7 @@ export default {
 		highlight(string) {
 			// make sure that no HTML exists before in the string
 			// to avoid XSS when displaying via `v-html`
-			string = this.$helper.string.stripHTML(string);
+			string = this.$helpers.string.stripHTML(string);
 
 			if (this.query.length > 0) {
 				const regex = new RegExp(`(${RegExp.escape(this.query)})`, "ig");

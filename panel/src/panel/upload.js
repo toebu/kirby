@@ -1,5 +1,6 @@
-import State from "./state.js";
+import { helpers } from "kirby";
 import listeners from "./listeners.js";
+import State from "./state.js";
 
 export const defaults = () => {
 	return {
@@ -103,12 +104,12 @@ export default (panel) => {
 			return {
 				completed: false,
 				error: null,
-				extension: kirby.helpers.file.extension(file.name),
+				extension: helpers.file.extension(file.name),
 				filename: file.name,
-				id: kirby.helpers.string.uuid(),
+				id: helpers.string.uuid(),
 				model: null,
-				name: kirby.helpers.file.name(file.name),
-				niceSize: kirby.helpers.file.niceSize(file.size),
+				name: helpers.file.name(file.name),
+				niceSize: helpers.file.niceSize(file.size),
 				progress: 0,
 				size: file.size,
 				src: file,
@@ -302,7 +303,7 @@ export default (panel) => {
 		},
 		async upload(file) {
 			try {
-				const response = await kirby.helpers.upload(file.src, {
+				const response = await helpers.upload(file.src, {
 					attributes: this.attributes,
 					headers: { "x-csrf": panel.system.csrf },
 					filename: file.name + "." + file.extension,

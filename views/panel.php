@@ -20,6 +20,14 @@ use Kirby\Toolkit\Html;
 
   <title>Kirby Panel</title>
 
+	<script type="importmap" nonce="<?= $nonce ?>">
+    {
+			"imports": {
+				"kirby": "<?= $assets['js']['kirby']['src'] ?>"
+			}
+		}
+  </script>
+
   <script nonce="<?= $nonce ?>">
     if (
         !window.CSS ||
@@ -64,9 +72,9 @@ use Kirby\Toolkit\Html;
   <?php if ($key === 'index'): ?>
   <script type="module" nonce="<?= $nonce ?>">
     <?= $assets['plugin-imports'] ?>
-    import('<?= $js['src'] ?>')
+    import("<?= $js['src'] ?>")
   </script>
-  <?php else: ?>
+  <?php elseif ($key !== 'kirby'): ?>
   <?= Html::tag('script', '', $js) . PHP_EOL ?>
   <?php endif ?>
   <?php endforeach ?>

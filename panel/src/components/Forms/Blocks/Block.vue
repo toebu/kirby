@@ -146,13 +146,13 @@ export default {
 
 			// custom preview
 			if (preview) {
-				if (this.$helper.isComponent("k-block-type-" + preview)) {
+				if (this.$helpers.isComponent("k-block-type-" + preview)) {
 					return preview;
 				}
 			}
 
 			// default preview
-			if (this.$helper.isComponent("k-block-type-" + this.type)) {
+			if (this.$helpers.isComponent("k-block-type-" + this.type)) {
 				return this.type;
 			}
 

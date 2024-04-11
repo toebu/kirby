@@ -85,10 +85,10 @@ export default {
 			return false;
 		},
 		hasSearch() {
-			return this.$helper.object.length(this.$panel.searches) > 0;
+			return this.$helpers.object.length(this.$panel.searches) > 0;
 		},
 		menus() {
-			return this.$helper.array.split(this.$panel.menu.entries, "-");
+			return this.$helpers.array.split(this.$panel.menu.entries, "-");
 		}
 	}
 };

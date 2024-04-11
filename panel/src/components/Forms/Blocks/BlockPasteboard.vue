@@ -25,7 +25,7 @@ export default {
 	emits: ["close", "paste", "submit"],
 	computed: {
 		shortcut() {
-			return this.$helper.keyboard.metaKey() + "+v";
+			return this.$helpers.keyboard.metaKey() + "+v";
 		}
 	},
 	methods: {

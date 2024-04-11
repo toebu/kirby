@@ -134,7 +134,7 @@ export default {
 		 * by the options prop
 		 */
 		activeTypes() {
-			return this.$helper.link.types(this.options);
+			return this.$helpers.link.types(this.options);
 		},
 		/**
 		 * Converts all active types to
@@ -177,7 +177,7 @@ export default {
 					return;
 				}
 
-				const parts = this.$helper.link.detect(value, this.activeTypes);
+				const parts = this.$helpers.link.detect(value, this.activeTypes);
 
 				if (parts) {
 					this.linkType = parts.type;

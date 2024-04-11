@@ -56,7 +56,7 @@ export default {
 	},
 	computed: {
 		hasFieldsets() {
-			return this.$helper.object.length(this.fieldsets) > 0;
+			return this.$helpers.object.length(this.fieldsets) > 0;
 		},
 		isEmpty() {
 			return this.value.length === 0;

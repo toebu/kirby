@@ -1,3 +1,4 @@
+import { helpers } from "kirby";
 import listeners from "./listeners.js";
 import State from "./state.js";
 
@@ -128,7 +129,7 @@ export default (panel, key, defaults) => {
 			// the feature needs to be loaded first
 			// before it can be opened. This will route
 			// the request through panel.open
-			if (kirby.helpers.url.isUrl(feature) === true) {
+			if (helpers.url.isUrl(feature) === true) {
 				return this.load(feature, options);
 			}
 

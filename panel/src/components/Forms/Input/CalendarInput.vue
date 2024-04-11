@@ -324,7 +324,7 @@ export default {
 			for (var x = min; x <= max; x++) {
 				options.push({
 					value: x,
-					text: this.$helper.pad(x)
+					text: this.$helpers.pad(x)
 				});
 			}
 

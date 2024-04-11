@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { helpers } from "kirby";
+
 export const props = {
 	props: {
 		/**
@@ -96,7 +98,7 @@ export default {
 				return false;
 			}
 
-			if (kirby.helpers.object.isObject(button) === false) {
+			if (helpers.object.isObject(button) === false) {
 				return defaults;
 			}
 

@@ -233,7 +233,7 @@ export default {
 		 * @returns {number}
 		 */
 		columnsCount() {
-			return this.$helper.object.length(this.columns);
+			return this.$helpers.object.length(this.columns);
 		},
 		/**
 		 * Config options for `k-draggable`
@@ -279,7 +279,7 @@ export default {
 		isColumnEmpty(columnIndex) {
 			return (
 				this.rows.filter(
-					(row) => this.$helper.object.isEmpty(row[columnIndex]) === false
+					(row) => this.$helpers.object.isEmpty(row[columnIndex]) === false
 				).length === 0
 			);
 		},
@@ -290,7 +290,7 @@ export default {
 		 * @returns {string}
 		 */
 		label(column, columnIndex) {
-			return column.label ?? this.$helper.string.ucfirst(columnIndex);
+			return column.label ?? this.$helpers.string.ucfirst(columnIndex);
 		},
 		/**
 		 * When the table has been sorted,
@@ -351,7 +351,7 @@ export default {
 				return fraction;
 			}
 
-			return this.$helper.ratio(fraction, "auto", false);
+			return this.$helpers.ratio(fraction, "auto", false);
 		}
 	}
 };

@@ -48,7 +48,7 @@ export default {
 				return this.reset();
 			}
 
-			if (this.$helper.isUploadEvent($event) === false) {
+			if (this.$helpers.isUploadEvent($event) === false) {
 				return this.reset();
 			}
 
@@ -64,7 +64,7 @@ export default {
 			this.reset();
 		},
 		onEnter($event) {
-			if (this.disabled === false && this.$helper.isUploadEvent($event)) {
+			if (this.disabled === false && this.$helpers.isUploadEvent($event)) {
 				this.dragging = true;
 			}
 		},
@@ -72,7 +72,7 @@ export default {
 			this.reset();
 		},
 		onOver($event) {
-			if (this.disabled === false && this.$helper.isUploadEvent($event)) {
+			if (this.disabled === false && this.$helpers.isUploadEvent($event)) {
 				$event.dataTransfer.dropEffect = "copy";
 				this.over = true;
 			}

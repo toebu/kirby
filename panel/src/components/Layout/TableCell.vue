@@ -56,11 +56,11 @@ export default {
 		 * @returns {string|false}
 		 */
 		component() {
-			if (this.$helper.isComponent(`k-${this.type}-field-preview`)) {
+			if (this.$helpers.isComponent(`k-${this.type}-field-preview`)) {
 				return `k-${this.type}-field-preview`;
 			}
 
-			if (this.$helper.isComponent(`k-table-${this.type}-cell`)) {
+			if (this.$helpers.isComponent(`k-table-${this.type}-cell`)) {
 				return `k-table-${this.type}-cell`;
 			}
 

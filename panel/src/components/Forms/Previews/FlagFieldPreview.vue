@@ -18,7 +18,7 @@ export default {
 	computed: {
 		status() {
 			return {
-				...this.$helper.page.status(this.value?.status),
+				...this.$helpers.page.status(this.value?.status),
 				...this.value
 			};
 		}

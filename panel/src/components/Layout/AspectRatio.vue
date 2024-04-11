@@ -20,7 +20,7 @@ export default {
 	},
 	computed: {
 		ratioPadding() {
-			return this.$helper.ratio(this.ratio);
+			return this.$helpers.ratio(this.ratio);
 		}
 	},
 	mounted() {

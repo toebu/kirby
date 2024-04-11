@@ -16,7 +16,7 @@ export default {
 				return;
 			}
 
-			this.value.code = this.$helper.slug(code, [this.$panel.system.ascii]);
+			this.value.code = this.$helpers.slug(code, [this.$panel.system.ascii]);
 			this.onCodeChanges(this.value.code);
 		}
 	},
@@ -43,7 +43,7 @@ export default {
 			}
 		},
 		onNameChanges(name) {
-			this.value.code = this.$helper
+			this.value.code = this.$helpers
 				.slug(name, [this.value.rules, this.$panel.system.ascii])
 				.substr(0, 2);
 		}

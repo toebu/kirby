@@ -28,7 +28,7 @@ export default {
 	inheritAttrs: false,
 	computed: {
 		inputType() {
-			if (this.$helper.isComponent(`k-${this.type}-input`)) {
+			if (this.$helpers.isComponent(`k-${this.type}-input`)) {
 				return this.type;
 			}
 

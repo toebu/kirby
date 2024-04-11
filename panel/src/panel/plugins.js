@@ -1,4 +1,5 @@
 // mixins
+import { helpers } from "kirby";
 import dialog from "@/mixins/dialog.js";
 import drawer from "@/mixins/drawer.js";
 import section from "@/mixins/section.js";
@@ -32,7 +33,7 @@ export const installComponent = (app, name, options) => {
 	options = installComponentMixins(options);
 
 	// check if the component is replacing a core component
-	if (kirby.helpers.isComponent(name) === true) {
+	if (helpers.isComponent(name) === true) {
 		window.console.warn(`Plugin is replacing "${name}"`);
 	}
 
@@ -52,7 +53,7 @@ export const installComponent = (app, name, options) => {
  * @returns {Object} Returns all installed components
  */
 export const installComponents = (app, components) => {
-	if (kirby.helpers.object.isObject(components) === false) {
+	if (helpers.object.isObject(components) === false) {
 		return;
 	}
 

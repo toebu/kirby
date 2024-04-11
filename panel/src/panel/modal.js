@@ -1,6 +1,7 @@
 // @ts-check
 
 import Feature, { defaults as featureDefaults } from "./feature.js";
+import { helpers } from "kirby";
 import "@/kirby/helpers/array.js";
 import { set } from "vue";
 
@@ -70,7 +71,7 @@ export default (panel, key, defaults) => {
 		 * @param {String} input
 		 */
 		focus(input) {
-			kirby.helpers.focus(`.k-${this.key()}-portal`, input);
+			helpers.focus(`.k-${this.key()}-portal`, input);
 		},
 
 		/**
@@ -169,7 +170,7 @@ export default (panel, key, defaults) => {
 			const response = await this.post(value, options);
 
 			// the request failed and should have raised an error
-			if (kirby.helpers.object.isObject(response) === false) {
+			if (helpers.object.isObject(response) === false) {
 				return response;
 			}
 

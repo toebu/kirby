@@ -47,7 +47,7 @@ export default {
 				return false;
 			}
 
-			let label = this.$helper.string.template(
+			let label = this.$helpers.string.template(
 				this.fieldset.label,
 				this.content
 			);
@@ -56,8 +56,8 @@ export default {
 				return false;
 			}
 
-			label = this.$helper.string.stripHTML(label);
-			return this.$helper.string.unescapeHTML(label);
+			label = this.$helpers.string.stripHTML(label);
+			return this.$helpers.string.unescapeHTML(label);
 		},
 		name() {
 			return this.fieldset.name ?? this.fieldset.label;

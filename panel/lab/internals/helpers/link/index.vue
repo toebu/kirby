@@ -3,7 +3,7 @@
 		<k-box theme="text">
 			<k-text>
 				Access the following link helpers in your Vue components through
-				<code>this.$helper.link</code>
+				<code>this.$helpers.link</code>
 			</k-text>
 		</k-box>
 
@@ -11,7 +11,7 @@
 			<k-text>
 				<p>Detects the type of a link:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.link.detect(link): object</k-code>
+				<k-code language="javascript">this.$helpers.link.detect(link): object</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -34,7 +34,7 @@
 			<k-text>
 				<p>Returns preview data for the link:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.link.preview(link): object</k-code>
+				<k-code language="javascript">this.$helpers.link.preview(link): object</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -55,7 +55,7 @@
 			<k-text>
 				<p>Returns default types:</p>
 				<!-- prettier-ignore -->
-				<k-code language="javascript">this.$helper.link.types(keys): object</k-code>
+				<k-code language="javascript">this.$helpers.link.types(keys): object</k-code>
 			</k-text>
 
 			<!-- @code -->
@@ -88,8 +88,8 @@ export const preview = {
 	watch: {
 		preview: {
 			async handler() {
-				const link = this.$helper.link.detect(this.preview);
-				this.previewResult = await this.$helper.link.preview(link);
+				const link = this.$helpers.link.detect(this.preview);
+				this.previewResult = await this.$helpers.link.preview(link);
 			},
 			immediate: true
 		}

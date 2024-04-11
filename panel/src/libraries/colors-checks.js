@@ -1,3 +1,5 @@
+import { helpers } from "kirby";
+
 export const RE_HEX = /^#?([\da-f]{3}){1,2}$/i;
 export const RE_HEXA = /^#?([\da-f]{4}){1,2}$/i;
 export const RE_RGB =
@@ -27,7 +29,7 @@ export function isHex(color) {
  */
 export function isRgb(color) {
 	return (
-		kirby.helpers.object.isObject(color) &&
+		helpers.object.isObject(color) &&
 		"r" in color &&
 		"g" in color &&
 		"b" in color
@@ -43,7 +45,7 @@ export function isRgb(color) {
  */
 export function isHsl(color) {
 	return (
-		kirby.helpers.object.isObject(color) &&
+		helpers.object.isObject(color) &&
 		"h" in color &&
 		"s" in color &&
 		"l" in color
@@ -59,7 +61,7 @@ export function isHsl(color) {
  */
 export function isHsv(color) {
 	return (
-		kirby.helpers.object.isObject(color) &&
+		helpers.object.isObject(color) &&
 		"h" in color &&
 		"s" in color &&
 		"v" in color

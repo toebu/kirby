@@ -42,7 +42,7 @@ export default {
 	computed: {
 		isValidUrl() {
 			return (
-				this.value !== "" && this.$helper.url.isUrl(this.value, true) === true
+				this.value !== "" && this.$helpers.url.isUrl(this.value, true) === true
 			);
 		}
 	},

@@ -193,7 +193,7 @@ export default {
 			return true;
 		},
 		hasFields() {
-			return this.$helper.object.length(this.fields) > 0;
+			return this.$helpers.object.length(this.fields) > 0;
 		},
 		/**
 		 * Returns if field is invalid
@@ -331,10 +331,10 @@ export default {
 				return false;
 			}
 
-			value = value ?? this.$helper.field.form(this.fields);
+			value = value ?? this.$helpers.field.form(this.fields);
 
 			// add a unique id, if it's not already defined
-			value._id = value._id ?? this.$helper.uuid();
+			value._id = value._id ?? this.$helpers.uuid();
 
 			if (this.prepend === true) {
 				this.items.unshift(value);
@@ -364,7 +364,7 @@ export default {
 		 * @returns {Object}
 		 */
 		form(autofocus) {
-			const fields = this.$helper.field.subfields(this, this.fields);
+			const fields = this.$helpers.field.subfields(this, this.fields);
 
 			// set the autofocus to the matching field in the form
 			if (autofocus) {
@@ -458,7 +458,7 @@ export default {
 				case "duplicate":
 					this.add({
 						...structuredClone(row),
-						_id: this.$helper.uuid()
+						_id: this.$helpers.uuid()
 					});
 					break;
 
@@ -543,7 +543,7 @@ export default {
 				return items;
 			}
 
-			return this.$helper.array.sortBy(items, this.sortBy);
+			return this.$helpers.array.sortBy(items, this.sortBy);
 		},
 		/**
 		 * Converts field value to internal
@@ -558,7 +558,7 @@ export default {
 
 			value = value.map((row) => {
 				return {
-					_id: row._id ?? this.$helper.uuid(),
+					_id: row._id ?? this.$helpers.uuid(),
 					...row
 				};
 			});

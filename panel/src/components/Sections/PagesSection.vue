@@ -10,7 +10,7 @@ export default {
 		items() {
 			return this.data.map((page) => {
 				const disabled = page.permissions.changeStatus === false;
-				const status = this.$helper.page.status(page.status, disabled);
+				const status = this.$helpers.page.status(page.status, disabled);
 				status.click = () => this.$dialog(page.link + "/changeStatus");
 
 				page.flag = {

@@ -95,7 +95,7 @@ export default {
 	},
 	methods: {
 		sluggify(value) {
-			return this.$helper.slug(
+			return this.$helpers.slug(
 				value,
 				[this.slugs, this.$panel.system.ascii],
 				this.allow

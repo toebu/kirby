@@ -83,7 +83,7 @@ export default {
 			};
 		},
 		hasFieldsets() {
-			return this.$helper.object.length(this.fieldsets) > 0;
+			return this.$helpers.object.length(this.fieldsets) > 0;
 		}
 	},
 	watch: {
@@ -99,7 +99,7 @@ export default {
 			}
 
 			const copy = index !== undefined ? this.rows[index] : this.rows;
-			this.$helper.clipboard.write(JSON.stringify(copy), e);
+			this.$helpers.clipboard.write(JSON.stringify(copy), e);
 
 			// a sign that it has been pasted
 			this.$panel.notification.success({
@@ -201,7 +201,7 @@ export default {
 				for (let i = 0; i < chunks; i += newLayout.columns.length) {
 					const copy = {
 						...structuredClone(newLayout),
-						id: this.$helper.uuid()
+						id: this.$helpers.uuid()
 					};
 
 					// move blocks to new layout from old
@@ -225,7 +225,7 @@ export default {
 		async paste(e, index = this.rows.length) {
 			// pass json to the paste endpoint to validate
 			let rows = await this.$api.post(this.endpoints.field + "/layout/paste", {
-				json: this.$helper.clipboard.read(e)
+				json: this.$helpers.clipboard.read(e)
 			});
 
 			if (rows.length) {
@@ -316,13 +316,13 @@ export default {
 			}
 
 			return copy.map((layout) => {
-				layout.id = this.$helper.uuid();
+				layout.id = this.$helpers.uuid();
 
 				layout.columns = layout.columns.map((column) => {
-					column.id = this.$helper.uuid();
+					column.id = this.$helpers.uuid();
 
 					column.blocks = column.blocks.map((block) => {
-						block.id = this.$helper.uuid();
+						block.id = this.$helpers.uuid();
 						return block;
 					});
 

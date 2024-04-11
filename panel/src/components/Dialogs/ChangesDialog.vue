@@ -42,7 +42,7 @@ export default {
 	computed: {
 		ids() {
 			return Object.keys(this.store).filter(
-				(id) => this.$helper.object.length(this.store[id]?.changes) > 0
+				(id) => this.$helpers.object.length(this.store[id]?.changes) > 0
 			);
 		},
 		store() {

@@ -118,11 +118,13 @@ export default {
 	emits: ["action", "click", "drag", "option"],
 	computed: {
 		hasFigure() {
-			return this.image !== false && this.$helper.object.length(this.image) > 0;
+			return (
+				this.image !== false && this.$helpers.object.length(this.image) > 0
+			);
 		},
 		title() {
-			return this.$helper.string
-				.stripHTML(this.$helper.string.unescapeHTML(this.text))
+			return this.$helpers.string
+				.stripHTML(this.$helpers.string.unescapeHTML(this.text))
 				.trim();
 		}
 	},

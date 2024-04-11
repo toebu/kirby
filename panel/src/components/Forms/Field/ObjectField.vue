@@ -74,11 +74,11 @@ export default {
 	},
 	computed: {
 		hasFields() {
-			return this.$helper.object.length(this.fields) > 0;
+			return this.$helpers.object.length(this.fields) > 0;
 		},
 		isEmpty() {
 			return (
-				this.object === null || this.$helper.object.length(this.object) === 0
+				this.object === null || this.$helpers.object.length(this.object) === 0
 			);
 		},
 		isInvalid() {
@@ -95,7 +95,7 @@ export default {
 	},
 	methods: {
 		add() {
-			this.object = this.$helper.field.form(this.fields);
+			this.object = this.$helpers.field.form(this.fields);
 			this.save();
 			this.open();
 		},
@@ -108,7 +108,7 @@ export default {
 		 * @returns {Object}
 		 */
 		form(autofocus) {
-			const fields = this.$helper.field.subfields(this, this.fields);
+			const fields = this.$helpers.field.subfields(this, this.fields);
 
 			// set the autofocus to the matching field in the form
 			if (autofocus) {

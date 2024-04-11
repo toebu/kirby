@@ -104,7 +104,7 @@ export default {
 				return this.skip.indexOf(option.value) !== -1;
 			});
 
-			this.matches = this.$helper.array.search(options, query, {
+			this.matches = this.$helpers.array.search(options, query, {
 				field: "text",
 				limit: this.limit
 			});
