@@ -73,7 +73,8 @@ export default defineConfig(({ command }) => {
 					entryFileNames: "js/[name].min.js",
 					chunkFileNames: "js/[name].min.js",
 					assetFileNames: "[ext]/[name].min.[ext]"
-				}
+				},
+				external: ["kirby"]
 			}
 		},
 		optimizeDeps: {

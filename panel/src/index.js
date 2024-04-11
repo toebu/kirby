@@ -6,7 +6,7 @@ import ErrorHandling from "./config/errorhandling";
 import Helpers from "./config/helpers.js";
 import I18n from "./config/i18n.js";
 import Legacy from "./panel/legacy.js";
-import Libraries from "./libraries/index.js";
+import Libraries from "./config/libraries.js";
 import Panel from "./panel/panel.js";
 import store from "./store/store.js";
 import Vuelidate from "vuelidate";
