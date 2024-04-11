@@ -229,7 +229,7 @@ export default (panel, key, defaults) => {
 		 * @param {Object} state
 		 */
 		successDispatch(state) {
-			if (isObject(state.dispatch) === false) {
+			if (helpers.object.isObject(state.dispatch) === false) {
 				return;
 			}
 

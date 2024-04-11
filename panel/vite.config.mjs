@@ -8,21 +8,11 @@ import externalGlobals from "rollup-plugin-external-globals";
 import externalize from "vite-plugin-externalize-dependencies";
 import kirby from "./scripts/vite-kirby.mjs";
 
-let customServer;
-try {
-	customServer = require("./vite.config.custom.js");
-} catch (err) {
-	customServer = {};
-}
-
-export default defineConfig(({ command }) => {
-	// gather plugins depending on environment
-	const plugins = [
-		vue(),
-		splitVendorChunkPlugin(),
-		kirby(),
-		externalize({ externals: ["kirby"] })
-	];
+/**
+ * Gather the plugins based on the context
+ */
+function definePlugins(command) {
+	const plugins = [vue(), splitVendorChunkPlugin(), kirby()];
 
 	if (command === "build") {
 		plugins.push(
@@ -44,8 +34,23 @@ export default defineConfig(({ command }) => {
 			{
 				...externalGlobals({ vue: "Vue" }),
 				enforce: "post"
-			}
+			},
+			externalize({ externals: ["kirby"] })
 		);
+	}
+
+	return plugins;
+}
+
+/**
+ * Create vite configuration
+ */
+export default defineConfig(({ command }) => {
+	let customServer;
+	try {
+		customServer = require("./vite.config.custom.js");
+	} catch (err) {
+		customServer = {};
 	}
 
 	const proxy = {
@@ -54,8 +59,8 @@ export default defineConfig(({ command }) => {
 		secure: false
 	};
 
-	return {
-		plugins,
+	const config = {
+		plugins: definePlugins(command),
 		define: {
 			// Fix vuelidate error
 			"process.env.BUILD": JSON.stringify("production")
@@ -103,4 +108,11 @@ export default defineConfig(({ command }) => {
 			setupFiles: ["vitest.setup.js"]
 		}
 	};
+
+	// Add alias for `kirby` package for testing
+	if (process.env.VITEST) {
+		config.resolve.alias.kirby = path.resolve(__dirname, "src/kirby/index.js");
+	}
+
+	return config;
 });
