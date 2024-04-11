@@ -18,11 +18,12 @@ export default {
 			type: Object,
 			default: () => ({})
 		},
-		permissions: Object
+		permissions: Object,
+		preview: Object
 	},
 	computed: {
 		isAvailable() {
-			if (!this.model.previewUrl) {
+			if (!this.link) {
 				return false;
 			}
 
@@ -33,7 +34,7 @@ export default {
 			return this.permissions.preview;
 		},
 		link() {
-			return this.model.previewUrl;
+			return this.model.previewUrl ?? this.preview?.url;
 		}
 	}
 };

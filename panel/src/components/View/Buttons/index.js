@@ -1,26 +1,22 @@
-import AccountThemeButton from "./AccountThemeButton.vue";
-import FilePreview from "./FilePreviewButton.vue";
-import FileSettings from "./FileSettingsButton.vue";
-import ModelLanguages from "./ModelLanguagesButton.vue";
-import ModelPreview from "./ModelPreviewButton.vue";
-import ModelSettings from "./ModelSettingsButton.vue";
-import PageStatus from "./PageStatusButton.vue";
+import Languages from "./LanguagesButton.vue";
+import Preview from "./PreviewButton.vue";
+import Settings from "./SettingsButton.vue";
+import Status from "./StatusButton.vue";
+import Theme from "./ThemeButton.vue";
 
-import ModelViewButtons from "./ModelViewButtons.vue";
+import ViewButtons from "./ViewButtons.vue";
 
 export default {
 	install(app) {
-		app.component("k-account-theme-button", AccountThemeButton);
-		app.component("k-file-preview-button", FilePreview);
-		app.component("k-file-settings-button", FileSettings);
-		app.component("k-model-languages-button", ModelLanguages);
-		app.component("k-model-preview-button", ModelPreview);
-		app.component("k-model-settings-button", ModelSettings);
-		app.component("k-page-status-button", PageStatus);
+		app.component("k-languages-button", Languages);
+		app.component("k-preview-button", Preview);
+		app.component("k-settings-button", Settings);
+		app.component("k-status-button", Status);
+		app.component("k-theme-button", Theme);
 
-		app.component("k-model-view-buttons", ModelViewButtons);
+		app.component("k-view-buttons", ViewButtons);
 
 		// @deprecated
-		app.component("k-languages-dropdown", ModelLanguages);
+		app.component("k-languages-dropdown", Languages);
 	}
 };

@@ -18,7 +18,7 @@
 			{{ model.filename }}
 
 			<template #buttons>
-				<k-model-view-buttons
+				<k-view-buttons
 					:buttons="buttons"
 					:props="{ id, isLocked, model, permissions, preview }"
 				/>

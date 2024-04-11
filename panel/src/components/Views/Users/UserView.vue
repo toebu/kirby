@@ -26,7 +26,7 @@
 			</template>
 
 			<template #buttons>
-				<k-model-view-buttons :buttons="buttons" :props="{ id, isLocked }" />
+				<k-view-buttons :buttons="buttons" :props="{ id, isLocked }" />
 				<k-form-buttons :lock="lock" />
 			</template>
 		</k-header>

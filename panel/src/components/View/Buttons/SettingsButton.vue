@@ -5,9 +5,9 @@
 			:dropdown="true"
 			:title="$t('settings')"
 			icon="cog"
-			size="sm"
 			variant="filled"
-			class="k-file-view-options"
+			size="sm"
+			class="k-view-options"
 			@click="$refs.settings.toggle()"
 		/>
 		<k-dropdown-content
@@ -25,16 +25,18 @@ export default {
 	props: {
 		id: String,
 		isLocked: Boolean,
-		preview: Object
+		model: Object
 	},
 	methods: {
 		action(action) {
-			switch (action) {
-				case "replace":
-					return this.$panel.upload.replace({
-						...this.preview,
-						...this.model
-					});
+			if (this.model.filename) {
+				switch (action) {
+					case "replace":
+						return this.$panel.upload.replace({
+							...this.preview,
+							...this.model
+						});
+				}
 			}
 		}
 	}
