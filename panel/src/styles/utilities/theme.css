@@ -32,51 +32,51 @@
 }
 
 /* Color themes */
-[data-theme="error"],
-[data-theme="negative"] {
+[data-theme^="error"],
+[data-theme^="negative"] {
 	--theme-color-h: var(--color-red-h);
 	--theme-color-s: var(--color-red-s);
 	--theme-color-boost: var(--color-red-boost);
 }
 
-[data-theme="notice"] {
+[data-theme^="notice"] {
 	--theme-color-h: var(--color-orange-h);
 	--theme-color-s: var(--color-orange-s);
 	--theme-color-boost: var(--color-orange-boost);
 }
 
-[data-theme="warning"] {
+[data-theme^="warning"] {
 	--theme-color-h: var(--color-yellow-h);
 	--theme-color-s: var(--color-yellow-s);
 	--theme-color-boost: var(--color-yellow-boost);
 }
 
-[data-theme="info"] {
+[data-theme^="info"] {
 	--theme-color-h: var(--color-blue-h);
 	--theme-color-s: var(--color-blue-s);
 	--theme-color-boost: var(--color-blue-boost);
 }
 
-[data-theme="love"] {
+[data-theme^="love"] {
 	--theme-color-h: var(--color-pink-h);
 	--theme-color-s: var(--color-pink-s);
 	--theme-color-boost: var(--color-pink-boost);
 }
 
-[data-theme="positive"] {
+[data-theme^="positive"] {
 	--theme-color-h: var(--color-green-h);
 	--theme-color-s: var(--color-green-s);
 	--theme-color-boost: var(--color-green-boost);
 }
 
-[data-theme="passive"] {
+[data-theme^="passive"] {
 	--theme-color-h: var(--color-gray-h);
 	--theme-color-s: var(--color-gray-s);
 	--theme-color-boost: 10%;
 }
 
-[data-theme="white"],
-[data-theme="text"] {
+[data-theme^="white"],
+[data-theme^="text"] {
 	--theme-color-back: var(--color-white);
 	--theme-color-icon: var(--color-gray-800);
 	--theme-color-text: var(--color-text);
@@ -84,7 +84,7 @@
 }
 
 /* Special Themes */
-[data-theme="dark"] {
+[data-theme^="dark"] {
 	--theme-color-h: var(--color-gray-h);
 	--theme-color-s: var(--color-gray-s);
 	--theme-color-boost: var(--color-gray-boost);
@@ -93,7 +93,7 @@
 	--theme-color-text: var(--color-gray-200);
 }
 
-[data-theme="code"] {
+[data-theme^="code"] {
 	--theme-color-back: var(--code-color-back);
 	--theme-color-hover: var(--color-black);
 	--theme-color-icon: var(--code-color-icon);
@@ -102,7 +102,7 @@
 	font-size: var(--code-font-size);
 }
 
-[data-theme="empty"] {
+[data-theme^="empty"] {
 	--theme-color-back: var(--color-light);
 	--theme-color-border: var(--color-gray-400);
 	--theme-color-icon: var(--color-gray-600);
@@ -110,7 +110,7 @@
 	border: 1px dashed var(--theme-color-border);
 }
 
-[data-theme="none"] {
+[data-theme^="none"] {
 	--theme-color-back: transparent;
 	--theme-color-border: transparent;
 	--theme-color-icon: var(--color-text);
