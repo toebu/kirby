@@ -5,6 +5,7 @@ import Components from "./components/index.js";
 import ErrorHandling from "./config/errorhandling";
 import Helpers from "./config/helpers.js";
 import I18n from "./config/i18n.js";
+import * as Kirby from "kirby";
 import Legacy from "./panel/legacy.js";
 import Libraries from "./config/libraries.js";
 import Panel from "./panel/panel.js";
@@ -13,6 +14,8 @@ import Vuelidate from "vuelidate";
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
+
+window.kirby = Kirby;
 
 /**
  * Global styles need to be loaded before

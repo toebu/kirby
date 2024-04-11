@@ -1,7 +1,4 @@
-import { helpers } from "kirby";
-import AuthError from "@/errors/AuthError.js";
-import JsonRequestError from "@/errors/JsonRequestError.js";
-import RequestError from "@/errors/RequestError.js";
+import { helpers, AuthError, JsonRequestError, RequestError } from "kirby";
 
 /**
  * Creates a proper request body

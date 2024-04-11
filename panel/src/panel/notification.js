@@ -1,6 +1,4 @@
-import AuthError from "@/errors/AuthError.js";
-import JsonRequestError from "@/errors/JsonRequestError.js";
-import RequestError from "@/errors/RequestError.js";
+import { AuthError, JsonRequestError, RequestError } from "kirby";
 import State from "./state.js";
 import Timer from "./timer.js";
 
